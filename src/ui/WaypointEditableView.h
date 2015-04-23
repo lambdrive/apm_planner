@@ -54,6 +54,7 @@ class QGCMissionNavLoiterTime;
 class QGCMissionNavReturnToLaunch;
 class QGCMissionNavLand;
 class QGCMissionNavTakeoff;
+class QGCMissionNavIdle;
 class QGCMissionNavSweep;
 class QGCMissionDoJump;
 class QGCMissionDoSetServo;

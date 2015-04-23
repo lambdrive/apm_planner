@@ -41,6 +41,7 @@ This file is part of the QGROUNDCONTROL project
 #include "mission/QGCMissionNavReturnToLaunch.h"
 #include "mission/QGCMissionNavLand.h"
 #include "mission/QGCMissionNavTakeoff.h"
+#include "mission/QGCMissionNavIdle.h"
 #include "mission/QGCMissionNavSweep.h"
 #include "mission/QGCMissionNavContinueChangeAlt.h"
 // Condition Commands
@@ -106,6 +107,7 @@ WaypointEditableView::WaypointEditableView(Waypoint* wp, QWidget* parent) :
         m_ui->comboBox_action->addItem(tr("Loiter Turns"),MAV_CMD_NAV_LOITER_TURNS);
         m_ui->comboBox_action->addItem(tr("Ret. to Launch"),MAV_CMD_NAV_RETURN_TO_LAUNCH);
         m_ui->comboBox_action->addItem(tr("Land"),MAV_CMD_NAV_LAND);
+        m_ui->comboBox_action->addItem(tr("Idle"),MAV_CMD_NAV_IDLE);
         m_ui->comboBox_action->addItem(tr("Change Alt & cont."),MAV_CMD_NAV_CONTINUE_AND_CHANGE_ALT);
         //m_ui->comboBox_action->addItem(tr("NAV: Target"),MAV_CMD_NAV_TARGET);
 
@@ -288,6 +290,9 @@ QWidget* WaypointEditableView::createActionWidget(int action)
         break;
     case MAV_CMD_NAV_TAKEOFF:
         missionWidget = new QGCMissionNavTakeoff(this);
+        break;
+    case MAV_CMD_NAV_IDLE:
+        missionWidget = new QGCMissionNavIdle(this);
         break;
     case MAV_CMD_NAV_CONTINUE_AND_CHANGE_ALT:
         missionWidget = new QGCMissionNavContinueChangeAlt(this);

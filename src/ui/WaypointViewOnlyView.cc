@@ -389,6 +389,25 @@ void WaypointViewOnlyView::updateValues()
         break;
         break;
     }
+    case MAV_CMD_NAV_IDLE:
+    {        
+        switch (wp->getFrame())
+        {
+        case MAV_FRAME_GLOBAL_RELATIVE_ALT:
+        case MAV_FRAME_GLOBAL:
+        {
+            m_ui->displayBar->setText(QString("IDLE. Stop Motors for <b>%1</b> seconds.").arg(wp->getParam1()));
+            break;
+        }
+        case MAV_FRAME_LOCAL_NED:
+        default:
+        {
+            m_ui->displayBar->setText(QString("IDLE. Stop Motors for <b>%1</b> seconds.").arg(wp->getParam1()));
+            break;
+        }
+        } //end Frame switch
+        break;
+    }
     case MAV_CMD_NAV_CONTINUE_AND_CHANGE_ALT:
     {
         switch (wp->getFrame())
