@@ -28,7 +28,7 @@ Section "APM Planner 2 files"
   !include apm_install.list
   !include qml_install.list
   SetOutPath $INSTDIR
-  File ..\libs\lib\sdl\win32\SDL.dll
+  File ..\libs\lib\sdl\win32\SDL2.dll
   File ..\libs\thirdParty\libxbee\lib\libxbee.dll
   WriteUninstaller $INSTDIR\APMPlanner2_uninstall.exe
   SetoutPath $INSTDIR\avrdude
@@ -70,7 +70,7 @@ Section "Uninstall"
   !include qml_install.list
   !include qt_uninstall.list
   Delete $INSTDIR\apmplanner2.exe
-  Delete $INSTDIR\SDL.dll
+  Delete $INSTDIR\SDL2.dll
   Delete $INSTDIR\libxbee.dll
   Delete $INSTDIR\APMPlanner2_uninstall.exe
 

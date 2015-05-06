@@ -443,17 +443,19 @@ LinuxBuild {
 
 WindowsBuild {
 	INCLUDEPATH += \
-        $$BASEDIR/libs/lib/sdl/msvc/include \
+        $$BASEDIR/libs/lib/sdl/msvc-SDL2-2.0.3/include
+        # $$BASEDIR/libs/lib/sdl/msvc/include
 
 	LIBS += \
-        -L$$BASEDIR/libs/lib/sdl/msvc/lib \
+        -L$$BASEDIR/libs/lib/sdl/msvc-SDL2-2.0.3/lib/x86 \
         -lSDL2main \
         -lSDL2
 }
 
 WindowsCrossBuild {
         INCLUDEPATH += \
-        $$BASEDIR/libs/lib/sdl/include \
+        $$BASEDIR/libs/lib/sdl/msvc-SDL2-2.0.3/include
+        # $$BASEDIR/libs/lib/sdl/include/SDL2 \
 
         LIBS += \
         -Llibs/lib/sdl/win32 \

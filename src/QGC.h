@@ -39,19 +39,26 @@
 /* Needed define for Eigen */
 //#define NOMINMAX
 #include <limits>
-template<typename T>
-inline bool isnan(T value)
-{
-    return value != value;
-
-}
-
-// requires #include <limits>
-template<typename T>
-inline bool isinf(T value)
-{
-    return (value == std::numeric_limits<T>::infinity() || (-1*value) == std::numeric_limits<T>::infinity()) && std::numeric_limits<T>::has_infinity;
-}
+//template<typename T>
+//inline bool isnan(T value)
+//{
+//    return value != value;
+//
+//}
+//
+//// requires #include <limits>
+//template<typename T>
+//inline bool isinf(T value)
+//{
+//    return (value == std::numeric_limits<T>::infinity() || (-1*value) == std::numeric_limits<T>::infinity()) && std::numeric_limits<T>::has_infinity;
+//}
+#include<math.h>
+#ifndef isnan
+#define isnan(x) std::isnan(x)
+#endif
+#ifndef isinf
+#define isinf(x) std::isinf(x)
+#endif
 #else
 #include <cmath>
 #if defined(Q_OS_MACX) || defined(Q_OS_WIN)

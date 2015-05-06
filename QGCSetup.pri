@@ -71,16 +71,16 @@ WindowsBuild {
 	DebugBuild: DLL_QT_DEBUGCHAR = "d"
     ReleaseBuild: DLL_QT_DEBUGCHAR = ""
     COPY_FILE_LIST = \
-        $$BASEDIR_WIN\\libs\\lib\\sdl\\win32\\SDL.dll \
+        $$BASEDIR_WIN\\libs\\lib\\sdl\\win32\\SDL2.dll \
         $$BASEDIR_WIN\\libs\\thirdParty\\libxbee\\lib\\libxbee.dll \
         $$(QTDIR)\\bin\\Qt5WebKitWidgets$${DLL_QT_DEBUGCHAR}.dll \
         $$(QTDIR)\\bin\\Qt5MultimediaWidgets$${DLL_QT_DEBUGCHAR}.dll \
         $$(QTDIR)\\bin\\Qt5Multimedia$${DLL_QT_DEBUGCHAR}.dll \
         $$(QTDIR)\\bin\\Qt5Gui$${DLL_QT_DEBUGCHAR}.dll \
         $$(QTDIR)\\bin\\Qt5Core$${DLL_QT_DEBUGCHAR}.dll \
-        $$(QTDIR)\\bin\\icuin51.dll \
-        $$(QTDIR)\\bin\\icuuc51.dll \
-        $$(QTDIR)\\bin\\icudt51.dll \
+        $$(QTDIR)\\bin\\icuin53.dll \
+        $$(QTDIR)\\bin\\icuuc53.dll \
+        $$(QTDIR)\\bin\\icudt53.dll \
         $$(QTDIR)\\bin\\Qt5Network$${DLL_QT_DEBUGCHAR}.dll \
         $$(QTDIR)\\bin\\Qt5Widgets$${DLL_QT_DEBUGCHAR}.dll \
         $$(QTDIR)\\bin\\Qt5OpenGL$${DLL_QT_DEBUGCHAR}.dll \
@@ -111,6 +111,9 @@ WindowsBuild {
 		# I'm not certain of the path for VS2008, so this only works for VS2010.
 		win32-msvc2010 {
 			QMAKE_POST_LINK += $$escape_expand(\\n) $$quote(xcopy /D /Y "\"C:\\Program Files \(x86\)\\Microsoft Visual Studio 10.0\\VC\\redist\\x86\\Microsoft.VC100.CRT\\*.dll\""  "$$DESTDIR_WIN\\")
+		}
+		win32-msvc2013 {
+			QMAKE_POST_LINK += $$escape_expand(\\n) $$quote(xcopy /D /Y "\"C:\\Program Files \(x86\)\\Microsoft Visual Studio 12.0\\VC\\redist\\x86\\Microsoft.VC120.CRT\\*.dll\""  "$$DESTDIR_WIN\\")
 		}
 	}
 }
