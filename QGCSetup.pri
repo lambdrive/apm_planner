@@ -88,6 +88,7 @@ WindowsBuild {
         $$(QTDIR)\\bin\\Qt5WebKit$${DLL_QT_DEBUGCHAR}.dll \
         $$(QTDIR)\\bin\\Qt5WebChannel$${DLL_QT_DEBUGCHAR}.dll \
         $$(QTDIR)\\bin\\Qt5Quick$${DLL_QT_DEBUGCHAR}.dll \
+        $$(QTDIR)\\bin\\Qt5QuickWidgets$${DLL_QT_DEBUGCHAR}.dll \
         $$(QTDIR)\\bin\\Qt5Qml$${DLL_QT_DEBUGCHAR}.dll \
         $$(QTDIR)\\bin\\Qt5Sql$${DLL_QT_DEBUGCHAR}.dll \
         $$(QTDIR)\\bin\\Qt5Positioning$${DLL_QT_DEBUGCHAR}.dll \
